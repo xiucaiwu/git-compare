@@ -16,7 +16,8 @@ project_path=`git rev-parse --show-toplevel`
 #仓库名称
 repo_name=`basename $project_path`
 #仓库的分支
-branch=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`
+#branch=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`
+branch=`git rev-parse --abbrev-ref HEAD`
 #记录删除的文件
 delFile=/tmp/$repo_name/$branch/del
 #记录更新的文件
